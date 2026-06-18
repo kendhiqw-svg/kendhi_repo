@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply font-body bg-[#F6F5F1] text-ink;
+  }
+  h1, h2, h3 {
+    @apply font-display;
+  }
+  :focus-visible {
+    outline: 2px solid #2C5F4F;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .eyebrow {
+    @apply font-mono text-[11px] uppercase tracking-[0.12em] text-ink/50;
+  }
+  .btn-primary {
+    @apply bg-brand text-white px-4 py-2 rounded-md text-sm font-medium
+           hover:bg-brand-dark transition-colors disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply bg-white border border-ink/15 text-ink px-4 py-2 rounded-md text-sm font-medium
+           hover:border-ink/30 transition-colors disabled:opacity-40;
+  }
+  .card {
+    @apply bg-white border border-ink/10 rounded-xl;
+  }
+  .input {
+    @apply w-full border border-ink/15 rounded-md px-3 py-2 text-sm bg-white
+           focus:border-brand focus:ring-1 focus:ring-brand outline-none;
+  }
+  .label {
+    @apply text-sm font-medium text-ink/80 mb-1 block;
+  }
+}
