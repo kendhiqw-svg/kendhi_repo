@@ -8,6 +8,7 @@ import Signup from "./pages/Signup";
 import UserDashboard from "./pages/UserDashboard";
 import VendorDashboard from "./pages/VendorDashboard";
 import AdminDashboard from "./pages/AdminDashboard";
+import StoreManager from "./pages/StoreManager";
 import NewRequest from "./pages/NewRequest";
 import RequestDetail from "./pages/RequestDetail";
 
@@ -40,6 +41,16 @@ export default function App() {
           <ProtectedRoute>
             <Layout>
               <Home />
+            </Layout>
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/stores"
+        element={
+          <ProtectedRoute allow={["admin"]}>
+            <Layout>
+              <StoreManager />
             </Layout>
           </ProtectedRoute>
         }

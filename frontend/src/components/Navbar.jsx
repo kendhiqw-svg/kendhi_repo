@@ -21,8 +21,12 @@ export default function Navbar() {
         </Link>
         {profile && (
           <div className="flex items-center gap-4 text-sm">
-            <div className="text-right leading-tight">
-              <div className="font-medium text-ink">{profile.full_name}</div>
+            {profile.role === "admin" && (
+              <Link to="/stores" className="text-ink/60 hover:text-ink transition-colors font-medium">
+                Stores
+              </Link>
+            )}
+            <div className="text-right leading-tight">              <div className="font-medium text-ink">{profile.full_name}</div>
               <div className="text-ink/50 text-xs">{roleLabel[profile.role]}</div>
             </div>
             <button onClick={handleSignOut} className="btn-secondary">
